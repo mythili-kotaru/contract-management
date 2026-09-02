@@ -1,0 +1,39 @@
+SOURCE: Synthetic (generated for RAG + HITL portfolio project) — fictional parties
+================================================================================
+
+VENDOR SUPPLY AND LOGISTICS AGREEMENT
+
+This Vendor Supply and Logistics Agreement ("Agreement") is entered into as of March 1, 2025, by and between Northgate Distribution Co. ("Buyer") and Meridian Freight Solutions LLC ("Vendor").
+
+1. SCOPE OF SUPPLY
+Vendor shall supply and deliver packaged consumer goods to Buyer's regional distribution centers in accordance with purchase orders issued under this Agreement.
+
+2. DELIVERY SERVICE LEVEL AGREEMENT
+2.1 Vendor shall deliver 98% of all purchase order line items within the delivery window specified on each purchase order ("On-Time Delivery Rate").
+2.2 Late Delivery Penalty. If a shipment is delivered late, Vendor shall pay Buyer a penalty calculated as follows:
+   (a) 1-3 calendar days late: 2% of the purchase order value.
+   (b) 4-7 calendar days late: 5% of the purchase order value.
+   (c) More than 7 calendar days late: 10% of the purchase order value, plus Buyer may cancel the affected purchase order without penalty to Buyer.
+2.3 Monthly On-Time Delivery Rate below 90% for two consecutive months constitutes a material breach under Section 5.2.
+
+3. PAYMENT TERMS
+Buyer shall pay all undisputed invoices within forty-five (45) days of receipt (Net 45).
+
+4. FORCE MAJEURE
+Neither party shall be liable for delay or failure to perform caused by events beyond its reasonable control, including natural disasters, labor strikes, or government action, provided the affected party gives written notice within five (5) business days and uses commercially reasonable efforts to mitigate the delay. Late delivery penalties under Section 2.2 do not accrue during a valid Force Majeure event.
+
+5. TERM AND TERMINATION
+5.1 This Agreement has an initial term of two (2) years and renews automatically for successive one (1) year terms unless either party gives ninety (90) days' written notice of non-renewal.
+5.2 Termination for Cause. Buyer may terminate this Agreement immediately upon written notice if Vendor materially breaches Section 2.3, or if Vendor fails to cure any other material breach within thirty (30) days of written notice.
+5.3 Termination for Convenience. Either party may terminate this Agreement for convenience upon sixty (60) days' written notice.
+
+6. LIMITATION OF LIABILITY
+Except for breaches of Section 8 (Confidentiality) or claims arising from Vendor's gross negligence or willful misconduct, neither party's aggregate liability under this Agreement shall exceed the total fees paid by Buyer to Vendor in the twelve (12) months preceding the claim.
+
+7. INSURANCE
+Vendor shall maintain commercial general liability insurance with a minimum coverage of $2,000,000 per occurrence and shall name Buyer as an additional insured.
+
+8. GOVERNING LAW
+This Agreement is governed by the laws of the State of Texas, without regard to conflict of law principles.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.

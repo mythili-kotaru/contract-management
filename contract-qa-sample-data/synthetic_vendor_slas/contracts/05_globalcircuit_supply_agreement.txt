@@ -1,0 +1,35 @@
+SOURCE: Synthetic (generated for RAG + HITL portfolio project) — fictional parties
+================================================================================
+
+SUPPLY AND INDEMNIFICATION AGREEMENT
+
+This Supply and Indemnification Agreement ("Agreement") is entered into as of September 3, 2025, between Northgate Distribution Co. ("Buyer") and Global Circuit Supply Ltd. ("Supplier").
+
+1. SUPPLY OF GOODS
+Supplier shall supply circuit board assemblies per Buyer's purchase orders and the specifications in Exhibit A.
+
+2. DELIVERY AND PENALTIES
+2.1 Supplier shall deliver within the lead time confirmed on each purchase order. Late delivery of more than five (5) business days results in a penalty of 3% of the delayed order's value per week of delay, capped at 15% of the order value.
+
+3. INDEMNIFICATION
+3.1 Supplier shall indemnify, defend, and hold harmless Buyer from any third-party claims arising from (a) Supplier's breach of the warranties in Section 5, (b) actual or alleged infringement of intellectual property rights by the supplied goods, or (c) bodily injury or property damage caused by a defect in the supplied goods.
+3.2 Buyer shall indemnify Supplier for claims arising solely from Buyer's misuse of the goods or Buyer's modifications not authorized by Supplier.
+
+4. LIMITATION OF LIABILITY
+4.1 Except for the indemnification obligations in Section 3, breaches of confidentiality, or claims arising from a party's gross negligence or willful misconduct — for which liability is uncapped — each party's aggregate liability under this Agreement is capped at two (2) times the fees paid in the preceding twelve (12) months.
+4.2 Neither party is liable for indirect, incidental, special, or consequential damages, except with respect to the uncapped categories in Section 4.1.
+
+5. WARRANTY
+Supplier warrants the goods will conform to specifications and be free of defects for eighteen (18) months from delivery.
+
+6. INSURANCE
+Supplier shall maintain product liability insurance of not less than $5,000,000 per occurrence and shall provide Buyer a certificate of insurance upon request.
+
+7. TERM AND TERMINATION
+7.1 Initial term of three (3) years, renewing for successive one (1) year terms absent ninety (90) days' notice of non-renewal.
+7.2 Either party may terminate for an uncured material breach following thirty (30) days' written notice. Buyer may also terminate immediately if Supplier becomes insolvent or files for bankruptcy protection.
+
+8. GOVERNING LAW
+This Agreement is governed by the laws of the State of Delaware.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.

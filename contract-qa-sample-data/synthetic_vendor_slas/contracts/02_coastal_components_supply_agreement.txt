@@ -1,0 +1,33 @@
+SOURCE: Synthetic (generated for RAG + HITL portfolio project) — fictional parties
+================================================================================
+
+COMPONENT SUPPLY AGREEMENT
+
+This Component Supply Agreement ("Agreement") is made effective June 15, 2025, between Northgate Distribution Co. ("Buyer") and Coastal Components Inc. ("Supplier").
+
+1. PRODUCTS AND ORDERING
+Supplier shall manufacture and supply electronic components as described in Exhibit A, pursuant to purchase orders accepted by Supplier in writing.
+
+2. DELIVERY PERFORMANCE
+Supplier shall use commercially reasonable efforts to meet the delivery dates set forth in each purchase order. In the event of a delay attributable to Supplier, Buyer may, at its discretion, withhold a portion of payment reasonably related to the resulting impact on Buyer's operations, subject to good-faith discussion between the parties regarding the appropriate amount. Repeated or chronic delays that Supplier fails to remedy after reasonable notice may be treated as a material breach of this Agreement.
+
+3. PAYMENT TERMS
+Invoices are payable Net 30 from the invoice date. Buyer may deduct any amounts properly withheld under Section 2 from the corresponding invoice.
+
+4. QUALITY AND INSPECTION
+Buyer may reject any shipment that does not conform to the specifications in Exhibit A within fifteen (15) days of receipt. Rejected goods shall be replaced by Supplier at no additional cost within a commercially reasonable time.
+
+5. TERM AND TERMINATION
+5.1 This Agreement commences on the effective date and continues for eighteen (18) months, renewing thereafter on a month-to-month basis unless either party provides thirty (30) days' notice of termination.
+5.2 Either party may terminate this Agreement for cause if the other party commits a material breach that remains uncured for forty-five (45) days after written notice describing the breach in reasonable detail.
+
+6. LIMITATION OF LIABILITY
+Supplier's liability for indirect, incidental, or consequential damages is excluded to the fullest extent permitted by law. Direct damages are capped at the greater of $250,000 or the fees paid under the purchase order giving rise to the claim.
+
+7. FORCE MAJEURE
+Neither party is liable for nonperformance caused by circumstances reasonably beyond its control, provided prompt notice is given and the party resumes performance as soon as reasonably practicable.
+
+8. GOVERNING LAW
+This Agreement is governed by the laws of the State of California.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.

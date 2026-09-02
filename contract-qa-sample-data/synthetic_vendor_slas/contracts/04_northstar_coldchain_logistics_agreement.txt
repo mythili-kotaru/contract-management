@@ -1,0 +1,36 @@
+SOURCE: Synthetic (generated for RAG + HITL portfolio project) — fictional parties
+================================================================================
+
+TEMPERATURE-CONTROLLED LOGISTICS SERVICES AGREEMENT
+
+This Temperature-Controlled Logistics Services Agreement ("Agreement") is entered into as of April 22, 2025, between Northgate Distribution Co. ("Buyer") and Northstar Cold Chain Inc. ("Carrier").
+
+1. SERVICES
+Carrier shall provide refrigerated transportation services maintaining product temperature between 34°F and 40°F throughout transit, for shipments tendered by Buyer.
+
+2. SERVICE LEVEL COMMITMENTS
+2.1 Temperature Excursion. Any shipment recorded outside the 34°F-40°F range for more than thirty (30) continuous minutes constitutes a "Temperature Excursion."
+2.2 Penalty for Temperature Excursion. Carrier shall pay Buyer liquidated damages of $7,500 per Temperature Excursion, plus the full replacement cost of any product Buyer determines, in its reasonable judgment, to be compromised as a result.
+2.3 On-Time Performance. Carrier shall achieve 95% on-time delivery measured monthly. Failure to meet this threshold in any month results in a service credit of 3% of that month's invoiced amount; failure for three consecutive months constitutes a material breach.
+2.4 Two or more Temperature Excursions within any rolling ninety (90) day period constitutes a material breach entitling Buyer to terminate this Agreement immediately under Section 6.2, without a cure period.
+
+3. PAYMENT TERMS
+Buyer shall pay invoices Net 30. Buyer may offset any liquidated damages owed under Section 2.2 against amounts otherwise due to Carrier.
+
+4. FORCE MAJEURE
+Temperature Excursions caused solely by a documented mechanical failure of Buyer-supplied packaging (not Carrier's equipment) are excluded from Section 2.2, provided Carrier notifies Buyer within twenty-four (24) hours.
+
+5. INSURANCE
+Carrier shall maintain cargo insurance of not less than $5,000,000 per shipment and commercial general liability insurance of not less than $3,000,000 per occurrence.
+
+6. TERM AND TERMINATION
+6.1 This Agreement has an initial term of one (1) year, renewing automatically for successive six (6) month terms absent sixty (60) days' notice of non-renewal.
+6.2 Termination for Cause. Buyer may terminate immediately upon written notice for any breach described in Section 2.4, or for any other material breach uncured within fifteen (15) days of written notice.
+
+7. LIMITATION OF LIABILITY
+Nothing in this Agreement limits Carrier's liability for amounts owed under Section 2.2, for gross negligence, or for willful misconduct. For all other claims, Carrier's aggregate liability is capped at $1,000,000 per incident.
+
+8. GOVERNING LAW
+This Agreement is governed by the laws of the State of Ohio.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.

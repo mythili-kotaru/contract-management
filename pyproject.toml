@@ -1,0 +1,19 @@
+[project]
+name = "contract-management"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "sqlalchemy",
+    "pgvector",
+    "psycopg2-binary",
+    "langgraph",
+    "langchain",
+    "langchain-google-genai",
+    "langfuse",
+    "langsmith"
+]

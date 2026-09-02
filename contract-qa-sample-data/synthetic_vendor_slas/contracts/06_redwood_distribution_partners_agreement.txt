@@ -1,0 +1,36 @@
+SOURCE: Synthetic (generated for RAG + HITL portfolio project) — fictional parties
+================================================================================
+
+EXCLUSIVE DISTRIBUTION AGREEMENT
+
+This Exclusive Distribution Agreement ("Agreement") is entered into as of November 12, 2024, between Northgate Distribution Co. ("Distributor") and Redwood Distribution Partners Inc. ("Supplier").
+
+1. APPOINTMENT
+Supplier appoints Distributor as its exclusive distributor for the sale of Supplier's products within the states of Texas, Oklahoma, and Louisiana ("Territory") during the term of this Agreement.
+
+2. MINIMUM PURCHASE COMMITMENT
+Distributor shall purchase not less than $1,200,000 in products per calendar year ("Minimum Commitment"). If Distributor fails to meet the Minimum Commitment in any year, Supplier may, at its option, convert Distributor's appointment from exclusive to non-exclusive for the remainder of the Territory upon thirty (30) days' notice.
+
+3. MOST FAVORED NATION PRICING
+Supplier represents that the pricing offered to Distributor under this Agreement is no less favorable than pricing offered to any other distributor purchasing similar volumes in the United States. If Supplier offers more favorable pricing to another similarly situated distributor, Supplier shall extend the same pricing to Distributor within thirty (30) days.
+
+4. DELIVERY
+Supplier shall ship confirmed orders within ten (10) business days. Shipments delayed beyond fifteen (15) business days entitle Distributor to cancel the affected order without penalty.
+
+5. PAYMENT TERMS
+Payment terms are Net 45 from invoice date.
+
+6. TERM AND TERMINATION
+6.1 Initial term of three (3) years. Automatically renews for successive one (1) year terms unless either party gives one hundred twenty (120) days' notice of non-renewal.
+6.2 Supplier may terminate for cause if Distributor fails to cure a material breach, including a Minimum Commitment shortfall left unremedied for two consecutive years, within sixty (60) days of written notice.
+
+7. NON-COMPETE
+During the term of this Agreement, Distributor shall not distribute directly competing products within the Territory without Supplier's prior written consent.
+
+8. LIMITATION OF LIABILITY
+Each party's aggregate liability under this Agreement is capped at the total purchase amounts paid in the preceding twelve (12) months, except for breaches of Section 7 or claims arising from gross negligence or willful misconduct.
+
+9. GOVERNING LAW
+This Agreement is governed by the laws of the State of Texas.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.

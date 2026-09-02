@@ -1,0 +1,28 @@
+contract_file,question,ground_truth_answer,category,risk_level
+01_meridian_freight_supply_agreement.txt,What are the payment terms?,Net 45 days from receipt of invoice,Payment Terms,auto
+01_meridian_freight_supply_agreement.txt,What penalty applies if a shipment is 5 days late?,5% of the purchase order value,Liquidated Damages,hitl
+01_meridian_freight_supply_agreement.txt,Under what condition can Buyer terminate for cause immediately?,"If Vendor's monthly On-Time Delivery Rate falls below 90% for two consecutive months, or fails to cure any other material breach within 30 days of notice",Termination For Cause,hitl
+01_meridian_freight_supply_agreement.txt,What state's law governs this agreement?,Texas,Governing Law,auto
+02_coastal_components_supply_agreement.txt,What are the payment terms?,Net 30 days from invoice date,Payment Terms,auto
+02_coastal_components_supply_agreement.txt,What penalty applies for a late delivery?,"No fixed percentage — Buyer may withhold a portion of payment 'reasonably related' to the impact, subject to good-faith discussion between the parties",Liquidated Damages,hitl
+02_coastal_components_supply_agreement.txt,What is the liability cap?,"The greater of $250,000 or the fees paid under the purchase order giving rise to the claim; indirect/consequential damages excluded",Cap On Liability,hitl
+02_coastal_components_supply_agreement.txt,How long does Buyer have to reject nonconforming goods?,15 days from receipt,Warranty Duration,auto
+03_prairie_fabricators_purchase_agreement.txt,What are the payment terms?,Net 30 from date of invoice,Payment Terms,auto
+03_prairie_fabricators_purchase_agreement.txt,What is the standard lead time?,14 business days from order confirmation,Delivery Terms,auto
+03_prairie_fabricators_purchase_agreement.txt,What is the warranty duration?,12 months from delivery,Warranty Duration,auto
+03_prairie_fabricators_purchase_agreement.txt,What is the notice period to terminate for convenience?,30 days' written notice,Termination For Convenience,auto
+04_northstar_coldchain_logistics_agreement.txt,What penalty applies for a temperature excursion?,"$7,500 liquidated damages per excursion, plus full replacement cost of any compromised product",Liquidated Damages,hitl
+04_northstar_coldchain_logistics_agreement.txt,What on-time delivery rate must Carrier meet?,95% measured monthly; missing it triggers a 3% service credit on that month's invoice,Volume/Performance Restriction,hitl
+04_northstar_coldchain_logistics_agreement.txt,When can Buyer terminate immediately without a cure period?,If there are two or more Temperature Excursions within any rolling 90-day period,Termination For Cause,hitl
+04_northstar_coldchain_logistics_agreement.txt,What are the payment terms?,Net 30,Payment Terms,auto
+04_northstar_coldchain_logistics_agreement.txt,What insurance must Carrier maintain?,"Cargo insurance of at least $5,000,000 per shipment and commercial general liability of at least $3,000,000 per occurrence",Insurance,hitl
+05_globalcircuit_supply_agreement.txt,What penalty applies for late delivery?,"3% of the delayed order's value per week of delay, capped at 15% of the order value",Liquidated Damages,hitl
+05_globalcircuit_supply_agreement.txt,What must Supplier indemnify Buyer against?,"Third-party claims from breach of warranties, IP infringement by the supplied goods, or bodily injury/property damage from a product defect",Indemnification,hitl
+05_globalcircuit_supply_agreement.txt,Is liability capped?,"Capped at 2x the prior 12 months' fees, except indemnification, confidentiality breaches, and gross negligence/willful misconduct, which are uncapped",Uncapped Liability,hitl
+05_globalcircuit_supply_agreement.txt,What is the warranty duration?,18 months from delivery,Warranty Duration,auto
+05_globalcircuit_supply_agreement.txt,What state's law governs this agreement?,Delaware,Governing Law,auto
+06_redwood_distribution_partners_agreement.txt,What is the minimum annual purchase commitment?,"$1,200,000 in products per calendar year",Minimum Commitment,hitl
+06_redwood_distribution_partners_agreement.txt,What happens if Distributor misses the Minimum Commitment?,Supplier may convert the appointment from exclusive to non-exclusive for the remainder of the Territory on 30 days' notice,Minimum Commitment,hitl
+06_redwood_distribution_partners_agreement.txt,Does this agreement include most-favored-nation pricing?,Yes — Supplier must extend equally favorable pricing given to similarly situated distributors within 30 days,Most Favored Nation,hitl
+06_redwood_distribution_partners_agreement.txt,What are the payment terms?,Net 45 from invoice date,Payment Terms,auto
+06_redwood_distribution_partners_agreement.txt,What happens if a shipment is delayed more than 15 business days?,Distributor may cancel the affected order without penalty,Delivery Terms,auto
