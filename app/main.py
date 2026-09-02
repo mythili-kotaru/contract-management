@@ -54,14 +54,15 @@ class DecisionRequest(BaseModel):
 @app.post("/questions")
 @observe(name="submit-question")
 def ask_question(request: QuestionRequest, db: Session = Depends(get_db)):
-
-    # Execute LangGraph
-    inputs = {"question": request.question}
-    result = app_graph.invoke(inputs)
+    try:
+        # Execute LangGraph
+        inputs = {"question": request.question}
+        result = app_graph.invoke(inputs)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Pipeline Execution Error: {str(e)}")
     
     status = result.get("status")
     risk_reason = result.get("risk_reason", "")
-    
 
     if status == "ambiguous":
         return {

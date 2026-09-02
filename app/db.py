@@ -29,7 +29,7 @@ class ContractChunk(Base):
     contract_id = Column(Integer, ForeignKey("contracts.id"))
     section_number = Column(Text)
     chunk_text = Column(Text, nullable=False)
-    embedding = Column(Vector(3072))
+    embedding = Column(Vector(1536))
 
     contract = relationship("Contract", back_populates="chunks")
 

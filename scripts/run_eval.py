@@ -3,13 +3,13 @@ import csv
 import re
 import json
 from langsmith import Client, evaluate
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from app.graph import app_graph
 
 # Initialize Langsmith Client
 client = Client()
-llm = ChatGoogleGenerativeAI(model=os.getenv("LLM_MODEL", "gemini-1.5-flash"), temperature=0)
+llm = ChatOpenAI(model=os.getenv("LLM_MODEL", "gpt-4o-mini"), temperature=0)
 
 def load_csv_to_langsmith(csv_path: str, dataset_name: str, has_risk_level: bool):
     if client.has_dataset(dataset_name=dataset_name):

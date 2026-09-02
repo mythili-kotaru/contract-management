@@ -116,11 +116,17 @@ function initChat() {
             });
 
             const data = await res.json();
+            if (!res.ok) {
+                appendMessage('assistant', `⚠️ ${data.detail || 'Error processing request'}`);
+                showToast(data.detail || 'Request failed', 'danger');
+                return;
+            }
+
             handleAssistantResponse(data);
             fetchStats();
         } catch (err) {
-            appendMessage('assistant', `⚠️ Error processing request: ${err.message}`);
-            showToast('Request failed. Check server logs.', 'danger');
+            appendMessage('assistant', `⚠️ Communication error: ${err.message}`);
+            showToast('Request failed. Check server connection.', 'danger');
         } finally {
             sendBtn.disabled = false;
             sendBtn.innerHTML = 'Send Query <span>↵</span>';

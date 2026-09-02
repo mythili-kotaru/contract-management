@@ -33,8 +33,8 @@ def assess_confidence_and_risk(question: str, top_score: float) -> tuple[str, st
     Returns (decision, reason)
     decision is either 'auto_answer' or 'queue_for_review'
     """
-    if top_score < 0.70:
-        return "queue_for_review", f"Low confidence: top similarity score ({top_score:.4f}) is below 0.70"
+    if top_score < 0.45:
+        return "queue_for_review", f"Low confidence: top similarity score ({top_score:.4f}) is below 0.45"
         
     high_risk, reason = is_high_risk(question)
     if high_risk:
