@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Contract & SLA Compliance Assistant</title>
+    <meta name="description" content="Agentic RAG with Human-in-the-Loop review for vendor contracts compliance and SLA monitoring.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">📜</div>
+            <div class="logo-text">
+                <h1>Contract Compliance Assistant</h1>
+                <span>Agentic RAG • LangGraph • pgvector • HITL</span>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-pill">
+                <span class="dot"></span>
+                <span>pgvector: <strong>3072 dims</strong></span>
+            </div>
+            <div class="stat-pill">
+                <span>Contracts: <strong id="stat-contracts-count">21</strong></span>
+            </div>
+            <div class="stat-pill">
+                <span>Chunks: <strong id="stat-chunks-count">640+</strong></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" aria-label="Main Navigation">
+        <button class="tab-btn active" data-tab="tab-assistant" id="tab-btn-assistant">
+            💬 AI Assistant
+        </button>
+        <button class="tab-btn" data-tab="tab-review" id="tab-btn-review">
+            🛡️ Review Queue <span class="tab-badge" id="review-badge" style="display:none;">0</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-contracts" id="tab-btn-contracts">
+            📂 Contracts Explorer
+        </button>
+        <button class="tab-btn" data-tab="tab-benchmarks" id="tab-btn-benchmarks">
+            📊 Evaluation & Benchmarks
+        </button>
+    </nav>
+
+    <!-- Main Container -->
+    <main>
+        <!-- Tab 1: AI Assistant & Query Terminal -->
+        <section id="tab-assistant" class="tab-content active">
+            <div class="assistant-layout">
+                <!-- Left: Chat Window -->
+                <div class="card query-box-container">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span>🤖 Interactive Contract Q&A</span>
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">
+                            Model: <strong style="color: var(--accent-primary);">Gemini 2.5 Flash</strong>
+                        </div>
+                    </div>
+
+                    <!-- Sample Prompts -->
+                    <div class="sample-prompts">
+                        <button class="prompt-pill" data-query="What governing law applies to the Meridian Freight agreement?">⚖️ Meridian Governing Law</button>
+                        <button class="prompt-pill" data-query="What is the liability cap for Coastal Components?">🛡️ Coastal Liability Cap</button>
+                        <button class="prompt-pill" data-query="What penalty applies if a shipment is 5 days late?">⚠️ Late Shipment Penalty</button>
+                        <button class="prompt-pill" data-query="What are the payment terms?">❓ Ambiguous: Payment Terms</button>
+                        <button class="prompt-pill" data-query="What on-time delivery rate must Northstar meet?">⏱️ Northstar SLA Rate</button>
+                    </div>
+
+                    <!-- Chat Messages Flow -->
+                    <div class="chat-history" id="chat-history">
+                        <div class="message assistant">
+                            <div class="msg-bubble">
+                                👋 Welcome to the <strong>Vendor Contract Compliance Assistant</strong>. You can query any SLA terms, penalty clauses, liability caps, or termination rights across your 21 vendor contracts.
+                            </div>
+                            <div class="msg-meta">
+                                <span>System Initialized</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input Box -->
+                    <div class="input-wrapper">
+                        <input type="text" id="query-input" class="query-input" placeholder="Ask a question (e.g. 'What is the liability cap for Meridian Freight?')..." autocomplete="off">
+                        <button id="send-btn" class="send-btn">
+                            Send Query <span>↵</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: RAG Pipeline Visualization -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <span>⚡ Agentic Pipeline Trace</span>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-steps">
+                        <div class="step-item" id="step-ambiguity">
+                            <div class="step-icon">1</div>
+                            <div class="step-info">
+                                <span class="step-title">Ambiguity Check</span>
+                                <span class="step-desc">Detects if query matches multiple vendors within 0.05 score</span>
+                            </div>
+                        </div>
+
+                        <div class="step-item" id="step-retrieval">
+                            <div class="step-icon">2</div>
+                            <div class="step-info">
+                                <span class="step-title">pgvector Retrieval</span>
+                                <span class="step-desc">Cosine similarity search across 3072-dim embeddings</span>
+                            </div>
+                        </div>
+
+                        <div class="step-item" id="step-generate">
+                            <div class="step-icon">3</div>
+                            <div class="step-info">
+                                <span class="step-title">Grounded Generation</span>
+                                <span class="step-desc">Generates answer strictly citing contract section numbers</span>
+                            </div>
+                        </div>
+
+                        <div class="step-item" id="step-risk">
+                            <div class="step-icon">4</div>
+                            <div class="step-info">
+                                <span class="step-title">Confidence & Risk Router</span>
+                                <span class="step-desc">Routes high-risk clauses or &lt; 0.70 confidence to HITL queue</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1rem; background: rgba(0,0,0,0.25); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                        <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem;">🛡️ Risk Guardrails Active:</div>
+                        <ul style="font-size: 0.75rem; color: var(--text-secondary); padding-left: 1.2rem; line-height: 1.6;">
+                            <li>Liquidated Damages & Penalties</li>
+                            <li>Liability Caps & Uncapped Exposure</li>
+                            <li>Termination for Cause</li>
+                            <li>Indemnification & Insurance Obligations</li>
+                            <li>Minimum Commitments & MFN Clauses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 2: HITL Review Queue -->
+        <section id="tab-review" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">
+                            <span>🛡️ Human-in-the-Loop Review Queue</span>
+                        </div>
+                        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                            Review queries routed by the Risk Router due to high-risk clause categories or low confidence.
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="loadReviewQueue()">
+                        🔄 Refresh Queue
+                    </button>
+                </div>
+
+                <div class="review-grid" id="review-queue-grid">
+                    <!-- Loaded dynamically via app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 3: Contracts Explorer -->
+        <section id="tab-contracts" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">
+                            <span>📂 Contract Repository</span>
+                        </div>
+                        <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                            All 21 ingested vendor contracts (15 CUAD and 6 synthetic agreements).
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="loadContracts()">
+                        🔄 Refresh
+                    </button>
+                </div>
+
+                <div class="contracts-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Vendor / Entity</th>
+                                <th>Source</th>
+                                <th>Agreement Type</th>
+                                <th>File Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contracts-table-body">
+                            <!-- Populated dynamically via app.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 4: Evaluation & Benchmarks Dashboard -->
+        <section id="tab-benchmarks" class="tab-content">
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span>📊 LangSmith Benchmark Certifications</span>
+                    </div>
+                    <span class="status-tag auto_answer">Verified Test Run</span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 0.5rem;">
+                    <div style="background: rgba(0,0,0,0.3); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">SYNTHETIC ACCURACY</div>
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--success); margin: 0.4rem 0;">94%</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">LLM-graded correctness against ground truth</div>
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.3); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">FAITHFULNESS SCORE</div>
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-primary); margin: 0.4rem 0;">100%</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Zero hallucination rate across citations</div>
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.3); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">RISK ROUTER MATCH</div>
+                        <div style="font-size: 2rem; font-weight: 700; color: #a855f7; margin: 0.4rem 0;">100%</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">27/27 synthetic questions routed accurately</div>
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.3); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">CUAD REAL CONTRACTS</div>
+                        <div style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin: 0.4rem 0;">67% / 60%</div>
+                        <div style="font-size: 0.75rem; color: var(--text-secondary);">Correctness / Faithfulness on CUAD</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

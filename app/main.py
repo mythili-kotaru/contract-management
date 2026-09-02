@@ -1,13 +1,47 @@
 import os
 from datetime import datetime
 from fastapi import FastAPI, Depends, HTTPException
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from langfuse import observe
-from app.db import get_db, ReviewQueue, Contract
+from app.db import get_db, ReviewQueue, Contract, ContractChunk
 from app.graph import app_graph
 
 app = FastAPI(title="Vendor Contract Assistant")
+
+# Mount Static Files & Serve UI
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/", include_in_schema=False)
+def serve_ui():
+    return FileResponse("static/index.html")
+
+@app.get("/stats")
+def get_stats(db: Session = Depends(get_db)):
+    contracts_count = db.query(Contract).count()
+    chunks_count = db.query(ContractChunk).count()
+    pending_reviews = db.query(ReviewQueue).filter(ReviewQueue.status == "pending").count()
+    return {
+        "contracts_count": contracts_count,
+        "chunks_count": chunks_count,
+        "pending_reviews": pending_reviews
+    }
+
+@app.get("/contracts")
+def list_contracts(db: Session = Depends(get_db)):
+    contracts = db.query(Contract.id, Contract.vendor_name, Contract.contract_file, Contract.agreement_type, Contract.source).all()
+    return [
+        {
+            "id": c.id,
+            "vendor_name": c.vendor_name,
+            "contract_file": c.contract_file,
+            "agreement_type": c.agreement_type,
+            "source": c.source
+        }
+        for c in contracts
+    ]
 
 class QuestionRequest(BaseModel):
     question: str
